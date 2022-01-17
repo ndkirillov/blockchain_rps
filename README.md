@@ -11,10 +11,10 @@ _1. How I see it working_
   7) If opponents eth-wallets of Player1 and Player2 match then the game is proceeded.
   8) 3 results are possible - P1-win (bets go to P1) / P2-win (bets go to P2) / Draw (bets withdraw)
   
-_  2. What is done_
+_2. What is done_
     For now the frontend part is practically ready, there are some issues with Moves-carousel and with layout in general.
     
-_  3. What is to be done_
+_3. What is to be done_
     Currently I am working on the development of the smart-contract.
   
   
