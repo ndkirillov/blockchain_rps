@@ -1,7 +1,7 @@
 # blockchain rps (rock-paper-scissors)
-Simple rock-paper-scissors game but with blockchain implementation.
+**Simple rock-paper-scissors game but with blockchain implementation.**
 
-1. How I see it working
+_1. How I see it working_
   1) Player1 chooses a move rock/paper/scissors.
   2) Player1 types his eth-wallet address (login with Metamask).
   3) Player1 types eth-wallet address of the opponent.
@@ -11,10 +11,10 @@ Simple rock-paper-scissors game but with blockchain implementation.
   7) If opponents eth-wallets of Player1 and Player2 match then the game is proceeded.
   8) 3 results are possible - P1-win (bets go to P1) / P2-win (bets go to P2) / Draw (bets withdraw)
   
-  2. What is done
+_  2. What is done_
     For now the frontend part is practically ready, there are some issues with Moves-carousel and with layout in general.
     
-  3. What is to be done
+_  3. What is to be done_
     Currently I am working on the development of the smart-contract.
   
   
