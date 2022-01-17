@@ -8,7 +8,8 @@ pragma solidity ^0.8.0;
  */
 
 contract Rps {
-    uint256 public constant BET = 1;
+    uint256 public constant MIN_BET = 1;
+    uint256 public constant MAX_BET = 10;
     uint256 P1_bet;
 
     enum Moves {
@@ -32,7 +33,8 @@ contract Rps {
     Moves private moveP2;
 
     modifier validBet() {
-        require(msg.value == BET);
+        require(msg.value > MIN_BET);
+        require(msg.value < MAX_BET);
         _;
     }
 
@@ -49,10 +51,20 @@ contract Rps {
         notAlreadyRegistered
         returns (uint256)
     {}
-
+    
+    //Encrypt move
+    function encryptMove(){}
+    
+    //Store encrypted move and bet
+    function store(){}
+    
     //Create PvP
     function matchPlayers() {}
+
+    //Decide who wins
+    function winnerIs(){}
 
     //Make payment
     function payment() {}
 }
+
