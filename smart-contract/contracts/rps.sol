@@ -11,12 +11,14 @@ contract Rps {
     uint256 public constant MIN_BET = 1;
     uint256 public constant MAX_BET = 10;
     uint256 P1_bet;
+    uint256 P2_bet;
 
     enum Moves {
         Rock,
         Paper,
         Scissors
     }
+
     enum Result {
         P1_Win,
         P2_Win,
@@ -33,38 +35,57 @@ contract Rps {
     Moves private moveP2;
 
     modifier validBet() {
-        require(msg.value > MIN_BET);
-        require(msg.value < MAX_BET);
+        require(P1_bet > MIN_BET);
+        require(P1_bet < MAX_BET);
+        require(P1_bet == P2_bet);
         _;
     }
 
-    modifier notAlreadyRegistered() {
-        require(msg.sender != P1 && msg.sender != P2);
-        _;
-    }
-
-    // Register a player.
-    function register()
+    // Register a game.
+    function registerGame()
         public
         payable
         validBet
-        notAlreadyRegistered
         returns (uint256)
-    {}
+    {
+        if
+    }
     
-    //Encrypt move
-    function encryptMove(){}
+    //Store encrypted move
+    function store(){
+        storedAnswer = encryptedAnswer;
+    }
     
-    //Store encrypted move and bet
-    function store(){}
-    
-    //Create PvP
-    function matchPlayers() {}
-
     //Decide who wins
-    function winnerIs(){}
+    function winnerIs(){
+        Result result;
+
+        if (moveP1 == moveP2)
+        {
+            result = Result.Draw;
+        } else if (
+                    (moveP1 == Moves.Rock     && moveP2 == Moves.Scissors) ||
+                    (moveP1 == Moves.Paper    && moveP2 == Moves.Rock)     ||
+                    (moveP1 == Moves.Scissors && moveP2 == Moves.Paper)
+                )
+        {
+            result = Result.P1_Win;
+        } else {
+            result = Result.P2_Win;
+        }
+        reset();  // Reset game before paying to avoid reentrancy attacks
+        payment();
+
+        return result;
+    }
 
     //Make payment
-    function payment() {}
+    function payment() {
+
+    }
+
+    function reset(){
+        
+    }
 }
 
